@@ -131,3 +131,15 @@ def test_bad_input_is_a_clean_error(tmp_path):
     r = invoke("run", p, "--no-llm")
     assert r.exit_code != 0
     assert "Traceback" not in r.output
+
+
+def test_run_with_model_down_degrades_visibly(partial, monkeypatch):
+    from synthesis_deliberator import llm
+
+    def boom(prompt, model):
+        raise RuntimeError("down")
+
+    monkeypatch.setattr(llm, "_call_model", boom)
+    r = invoke("run", partial, "--model", "any/model")
+    assert r.exit_code == 0
+    assert "model unavailable (any/model)" in r.output
