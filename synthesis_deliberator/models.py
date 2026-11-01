@@ -5,15 +5,18 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from typing import Any, Optional
 
-TOOL_NAME = "cpr-tool"  # TEMPLATE: set to the tool slug
-EXPORT_SCHEMA = "cpr.tool.export/1"  # TEMPLATE: cpr.<abbrev>.export/1
+TOOL_NAME = "synthesis-deliberator"
+EXPORT_SCHEMA = "cpr.sdl.export/1"
 
-AI_PARADIGM = "Rule-based"  # TEMPLATE: the roadmap's primary paradigm
+AI_PARADIGM = "LLM (reasoning)"
 AI_PARADIGM_RATIONALE = (
-    # TEMPLATE: one paragraph on why this paradigm fits this research task.
-    "This skeleton uses a deterministic rule-based core so that every finding is "
-    "reproducible and auditable without a model. Replace this paragraph with the "
-    "methodological case for the tool's own paradigm."
+    "Synthesis fails most often by converging too early: the first plausible story absorbs "
+    "the data and the rest is read as confirmation. Holding three genuinely different "
+    "interpretations of the same evidence open, each tied to what it explains and what it "
+    "struggles to explain, is open-ended abductive reasoning, so a reasoning model spending "
+    "deliberate compute on it is the right fit. A deterministic layer checks every "
+    "interpretation against the evidence the researcher supplied, flags readings that are "
+    "the same story reworded, and never picks a winner. Settling is the researcher's act."
 )
 
 SEVERITIES = ("high", "medium", "low")

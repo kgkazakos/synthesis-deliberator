@@ -33,10 +33,10 @@ jobs:
         run: pytest -q
 
       - name: CLI smoke test
-        # TEMPLATE: rename cli, example and schema id
+        # cli alias, example and schema id
         run: |
-          cpr-tool --version
-          cpr-tool paradigm
-          cpr-tool run examples/sample.json --no-llm
-          cpr-tool export examples/sample.json --no-llm -o /tmp/out.json
-          python -c "import json; d=json.load(open('/tmp/out.json')); assert d['schema']=='cpr.tool.export/1'"
+          sdl --version
+          sdl paradigm
+          sdl run examples/sample.json --no-llm
+          sdl export examples/sample.json --no-llm -o /tmp/out.json
+          python -c "import json; d=json.load(open('/tmp/out.json')); assert d['schema']=='cpr.sdl.export/1'"

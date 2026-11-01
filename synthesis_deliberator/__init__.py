@@ -1,4 +1,4 @@
-"""cpr-tool: CPR Phase II, Frame X (Frame Name), tool N.
+"""synthesis-deliberator: CPR Phase II, Frame X (Frame Name), tool N.
 
 TEMPLATE: two or three lines on what the tool does, what the deterministic core
 computes (--no-llm), and what the AI layer adds.

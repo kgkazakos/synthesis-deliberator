@@ -1,5 +1,5 @@
-from cpr_tool.engine import analyze
-from cpr_tool.models import Finding
+from synthesis_deliberator.engine import analyze
+from synthesis_deliberator.models import Finding
 
 import pytest
 

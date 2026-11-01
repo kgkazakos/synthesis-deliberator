@@ -1,5 +1,5 @@
-from cpr_tool import llm
-from cpr_tool.engine import analyze
+from synthesis_deliberator import llm
+from synthesis_deliberator.engine import analyze
 
 
 def test_default_model_used_when_none_given(monkeypatch):

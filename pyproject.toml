@@ -3,14 +3,14 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cpr-tool"  # TEMPLATE: tool slug
+name = "synthesis-deliberator"
 version = "0.1.0"
-description = "TEMPLATE: one-line description. CPR Phase II, Frame X tool N."
+description = "Slow synthesis that holds three competing interpretations of research evidence open before the researcher settles. CPR Phase II, Frame A tool 3."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Kostas Kazakos" }]
-keywords = ["research-methods", "uxr", "cpr", "ai-native-research"]  # TEMPLATE: add paradigm keywords
+keywords = ["research-methods", "uxr", "cpr", "ai-native-research", "research-synthesis", "competing-hypotheses", "llm-reasoning"]
 classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -31,10 +31,10 @@ ui = ["streamlit>=1.36"]
 dev = ["pytest>=8.0"]
 
 [project.scripts]
-cpr-tool = "cpr_tool.cli:main"  # TEMPLATE: short CLI alias = "<package>.cli:main"
+sdl = "synthesis_deliberator.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["cpr_tool*"]  # TEMPLATE: package name
+include = ["synthesis_deliberator*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

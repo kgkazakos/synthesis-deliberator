@@ -2,7 +2,7 @@
 # dark mode (learned on V1). Frame accent as primaryColor.
 [theme]
 base = "light"
-primaryColor = "#4f3d8f"  # TEMPLATE: frame accent
+primaryColor = "#4f3d8f"
 backgroundColor = "#fbfaf8"
 secondaryBackgroundColor = "#f2ede1"
 textColor = "#1a1917"

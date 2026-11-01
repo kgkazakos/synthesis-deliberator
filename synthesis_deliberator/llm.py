@@ -1,4 +1,4 @@
-"""AI layer for cpr-tool.
+"""AI layer for synthesis-deliberator.
 
 Strictly additive. If no backend is configured or a call fails, this module returns
 None and the rule-based report stands unchanged. It never reads or mutates any value
@@ -14,7 +14,7 @@ from typing import Optional
 
 from .models import Report
 
-DEFAULT_MODEL = os.environ.get("CPR_LLM_MODEL", "anthropic/claude-sonnet-5-5")
+DEFAULT_MODEL = os.environ.get("CPR_LLM_MODEL", "anthropic/claude-opus-5-5")
 
 # Any litellm-routable model works. Override with --model or CPR_LLM_MODEL.
 
