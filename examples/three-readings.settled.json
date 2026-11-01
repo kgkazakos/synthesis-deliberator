@@ -1,0 +1,290 @@
+{
+  "schema": "cpr.sdl.export/1",
+  "exported_at": "2026-11-01T11:14:33+00:00",
+  "paradigm": "LLM (reasoning)",
+  "report": {
+    "tool": "synthesis-deliberator",
+    "version": "0.1.0",
+    "question": "Why do first-time workspace admins abandon setup before inviting their team?",
+    "thresholds": {
+      "min_evidence": 6,
+      "dominance": 0.5,
+      "overlap_support": 0.7,
+      "overlap_statement": 0.6
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "text": "I got to the roles screen and realised I didn't know who should be an owner versus an admin. I closed the tab and meant to come back.",
+        "participant": "P1",
+        "source": "interview",
+        "syntheticity": 0.0
+      },
+      {
+        "id": "E2",
+        "text": "My manager signed us up and told me to set it up, but I can't approve a paid plan, so I stopped once it asked about billing.",
+        "participant": "P2",
+        "source": "interview",
+        "syntheticity": 0.0
+      },
+      {
+        "id": "E3",
+        "text": "We needed SSO before anyone else could log in, and that is an IT ticket. That took three weeks.",
+        "participant": "P3",
+        "source": "interview",
+        "syntheticity": 0.0
+      },
+      {
+        "id": "E4",
+        "text": "Setup took longer than I expected.",
+        "participant": "P4",
+        "source": "survey",
+        "syntheticity": 0.0
+      },
+      {
+        "id": "E5",
+        "text": "Didn't have time this month, it was end of quarter.",
+        "participant": "P5",
+        "source": "survey",
+        "syntheticity": 0.0
+      },
+      {
+        "id": "E6",
+        "text": "The roles part was fine. The import from our old tool failed twice and I gave up.",
+        "participant": "P6",
+        "source": "interview",
+        "syntheticity": 0.0
+      },
+      {
+        "id": "E7",
+        "text": "62% of abandoned setups stop on the roles and permissions step; median time on that step is 4m10s.",
+        "participant": null,
+        "source": "analytics",
+        "syntheticity": 0.0
+      },
+      {
+        "id": "E8",
+        "text": "Abandonment is 1.4x higher for workspaces created in the last two weeks of a quarter.",
+        "participant": null,
+        "source": "analytics",
+        "syntheticity": 0.0
+      },
+      {
+        "id": "E9",
+        "text": "How do I give someone admin rights without giving them billing access?",
+        "participant": "P7",
+        "source": "support ticket",
+        "syntheticity": 0.0
+      },
+      {
+        "id": "E10",
+        "text": "Once finance approved it a month later I finished setup in an afternoon.",
+        "participant": "P2",
+        "source": "interview",
+        "syntheticity": 0.0
+      }
+    ],
+    "interpretations": [
+      {
+        "id": "I1",
+        "origin": "researcher",
+        "statement": "Admins stall because the roles and permissions model is hard to map onto their organisation.",
+        "mechanism": "The role model forces an org-design decision the admin was not expecting to make alone.",
+        "supports": [
+          "E1",
+          "E4",
+          "E7",
+          "E9"
+        ],
+        "strains": [
+          "E6"
+        ],
+        "assumptions": [
+          "The roles step is where people stop, not merely where they pause."
+        ],
+        "discriminator": "Abandonment drops when the roles step is deferred or pre-filled with defaults."
+      },
+      {
+        "id": "I2",
+        "origin": "researcher",
+        "statement": "The person running setup lacks authority to commit, so setup waits on someone else's approval.",
+        "mechanism": "Setup is delegated to someone without budget or identity authority; the stall is an approval queue.",
+        "supports": [
+          "E2",
+          "E3",
+          "E10"
+        ],
+        "strains": [
+          "E7"
+        ],
+        "assumptions": [
+          "Abandoned workspaces often resume after an approval elsewhere."
+        ],
+        "discriminator": "Abandoners more often lack billing permission, and resumed setups follow a billing or SSO change."
+      },
+      {
+        "id": "I3",
+        "origin": "researcher",
+        "statement": "Setup collides with end-of-quarter workload; the stall is about timing, not the product.",
+        "mechanism": "Trials started near quarter end compete with closing work and are dropped for lack of time.",
+        "supports": [
+          "E5",
+          "E8"
+        ],
+        "strains": [
+          "E1",
+          "E6"
+        ],
+        "assumptions": [
+          "Quarter timing is not confounded with company size or plan type."
+        ],
+        "discriminator": "The quarter-end effect holds within the same company size and plan."
+      }
+    ],
+    "checks": [
+      {
+        "interpretation_id": "I1",
+        "status": "anchored",
+        "unknown_ids": [],
+        "participants": 3,
+        "synthetic_share": 0.0
+      },
+      {
+        "interpretation_id": "I2",
+        "status": "anchored",
+        "unknown_ids": [],
+        "participants": 2,
+        "synthetic_share": 0.0
+      },
+      {
+        "interpretation_id": "I3",
+        "status": "anchored",
+        "unknown_ids": [],
+        "participants": 1,
+        "synthetic_share": 0.0
+      }
+    ],
+    "matrix": [
+      {
+        "evidence_id": "E1",
+        "marks": {
+          "I1": "supports",
+          "I2": "not_cited",
+          "I3": "strains"
+        },
+        "diagnosticity": "diagnostic"
+      },
+      {
+        "evidence_id": "E7",
+        "marks": {
+          "I1": "supports",
+          "I2": "strains",
+          "I3": "not_cited"
+        },
+        "diagnosticity": "diagnostic"
+      },
+      {
+        "evidence_id": "E2",
+        "marks": {
+          "I1": "not_cited",
+          "I2": "supports",
+          "I3": "not_cited"
+        },
+        "diagnosticity": "partial"
+      },
+      {
+        "evidence_id": "E3",
+        "marks": {
+          "I1": "not_cited",
+          "I2": "supports",
+          "I3": "not_cited"
+        },
+        "diagnosticity": "partial"
+      },
+      {
+        "evidence_id": "E4",
+        "marks": {
+          "I1": "supports",
+          "I2": "not_cited",
+          "I3": "not_cited"
+        },
+        "diagnosticity": "partial"
+      },
+      {
+        "evidence_id": "E5",
+        "marks": {
+          "I1": "not_cited",
+          "I2": "not_cited",
+          "I3": "supports"
+        },
+        "diagnosticity": "partial"
+      },
+      {
+        "evidence_id": "E6",
+        "marks": {
+          "I1": "strains",
+          "I2": "not_cited",
+          "I3": "strains"
+        },
+        "diagnosticity": "partial"
+      },
+      {
+        "evidence_id": "E8",
+        "marks": {
+          "I1": "not_cited",
+          "I2": "not_cited",
+          "I3": "supports"
+        },
+        "diagnosticity": "partial"
+      },
+      {
+        "evidence_id": "E9",
+        "marks": {
+          "I1": "supports",
+          "I2": "not_cited",
+          "I3": "not_cited"
+        },
+        "diagnosticity": "partial"
+      },
+      {
+        "evidence_id": "E10",
+        "marks": {
+          "I1": "not_cited",
+          "I2": "supports",
+          "I3": "not_cited"
+        },
+        "diagnosticity": "partial"
+      }
+    ],
+    "findings": [
+      {
+        "rule_id": "NO_RATIONALE",
+        "severity": "high",
+        "message": "The settlement has no rationale.",
+        "location": "I2",
+        "stage": "settlement"
+      },
+      {
+        "rule_id": "UNADDRESSED_STRAIN",
+        "severity": "medium",
+        "message": "I2 strains against E7, which the rationale never mentions.",
+        "location": "I2",
+        "stage": "settlement"
+      }
+    ],
+    "prompts": [],
+    "synthetic_share": 0.0,
+    "settlement": {
+      "chosen": "I2",
+      "rationale": "",
+      "settled_at": "2026-11-01T12:00:00+00:00"
+    },
+    "model": null,
+    "model_note": null,
+    "counts": {
+      "high": 1,
+      "medium": 1,
+      "low": 0
+    }
+  }
+}

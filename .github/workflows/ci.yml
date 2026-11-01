@@ -33,10 +33,10 @@ jobs:
         run: pytest -q
 
       - name: CLI smoke test
-        # cli alias, example and schema id
         run: |
           sdl --version
           sdl paradigm
-          sdl run examples/sample.json --no-llm
-          sdl export examples/sample.json --no-llm -o /tmp/out.json
+          sdl run examples/onboarding-dropoff.json --no-llm
+          sdl matrix examples/three-readings.json
+          sdl export examples/three-readings.json --no-llm -o /tmp/out.json
           python -c "import json; d=json.load(open('/tmp/out.json')); assert d['schema']=='cpr.sdl.export/1'"

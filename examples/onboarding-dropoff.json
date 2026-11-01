@@ -1,0 +1,63 @@
+{
+  "question": "Why do first-time workspace admins abandon setup before inviting their team?",
+  "evidence": [
+    {
+      "id": "E1",
+      "participant": "P1",
+      "source": "interview",
+      "text": "I got to the roles screen and realised I didn't know who should be an owner versus an admin. I closed the tab and meant to come back."
+    },
+    {
+      "id": "E2",
+      "participant": "P2",
+      "source": "interview",
+      "text": "My manager signed us up and told me to set it up, but I can't approve a paid plan, so I stopped once it asked about billing."
+    },
+    {
+      "id": "E3",
+      "participant": "P3",
+      "source": "interview",
+      "text": "We needed SSO before anyone else could log in, and that is an IT ticket. That took three weeks."
+    },
+    {
+      "id": "E4",
+      "participant": "P4",
+      "source": "survey",
+      "text": "Setup took longer than I expected."
+    },
+    {
+      "id": "E5",
+      "participant": "P5",
+      "source": "survey",
+      "text": "Didn't have time this month, it was end of quarter."
+    },
+    {
+      "id": "E6",
+      "participant": "P6",
+      "source": "interview",
+      "text": "The roles part was fine. The import from our old tool failed twice and I gave up."
+    },
+    {
+      "id": "E7",
+      "source": "analytics",
+      "text": "62% of abandoned setups stop on the roles and permissions step; median time on that step is 4m10s."
+    },
+    {
+      "id": "E8",
+      "source": "analytics",
+      "text": "Abandonment is 1.4x higher for workspaces created in the last two weeks of a quarter."
+    },
+    {
+      "id": "E9",
+      "participant": "P7",
+      "source": "support ticket",
+      "text": "How do I give someone admin rights without giving them billing access?"
+    },
+    {
+      "id": "E10",
+      "participant": "P2",
+      "source": "interview",
+      "text": "Once finance approved it a month later I finished setup in an afternoon."
+    }
+  ]
+}

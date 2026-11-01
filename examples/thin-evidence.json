@@ -1,0 +1,97 @@
+{
+  "question": "Why do first-time workspace admins abandon setup before inviting their team?",
+  "evidence": [
+    {
+      "id": "E1",
+      "participant": "P1",
+      "source": "interview",
+      "text": "I didn't know which plan we were on, so I waited."
+    },
+    {
+      "id": "E2",
+      "participant": "P1",
+      "source": "interview",
+      "text": "The invite email went to spam for half the team."
+    },
+    {
+      "participant": "P1",
+      "source": "interview",
+      "text": "I would have finished if the checklist had saved my progress.",
+      "_cpr_synthetic": {
+        "tool": "synthetic-interview-generator",
+        "version": "0.3.0",
+        "generated_at": "2026-10-12T09:00:00Z",
+        "model": "example/model",
+        "ancestry": [],
+        "human_grounding": "none"
+      }
+    },
+    {
+      "id": "E2",
+      "participant": "P2",
+      "source": "interview",
+      "text": "Nobody told me I was the admin."
+    },
+    {
+      "id": "E5",
+      "participant": "P3",
+      "source": "interview",
+      "text": "Setup felt like a chore with no clear payoff.",
+      "_cpr_synthetic": {
+        "tool": "synthetic-interview-generator",
+        "version": "0.3.0",
+        "generated_at": "2026-10-12T09:00:00Z",
+        "model": "example/model",
+        "ancestry": [],
+        "human_grounding": "none"
+      }
+    }
+  ],
+  "interpretations": [
+    {
+      "id": "I1",
+      "statement": "Admins wait on information about their plan before acting.",
+      "supports": [
+        "E1"
+      ],
+      "strains": [
+        "E2"
+      ],
+      "discriminator": "Plan-lookup clicks precede abandonment."
+    },
+    {
+      "id": "I2",
+      "statement": "Setup lacks visible progress and payoff, so it loses to other work.",
+      "supports": [
+        "#3",
+        "E5"
+      ],
+      "strains": [
+        "E1"
+      ],
+      "discriminator": "Saved-progress users finish more often."
+    },
+    {
+      "id": "I3",
+      "statement": "Admin role assignment happens without the admin knowing.",
+      "supports": [
+        "E2"
+      ],
+      "strains": [
+        "E5"
+      ],
+      "discriminator": "Admins assigned by someone else abandon more."
+    },
+    {
+      "id": "I4",
+      "statement": "Invites fail to reach the team, so setup has no reason to continue.",
+      "supports": [
+        "E2"
+      ],
+      "strains": [
+        "E1"
+      ],
+      "discriminator": "Invite delivery failures precede abandonment."
+    }
+  ]
+}
