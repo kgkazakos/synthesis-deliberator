@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cpr-tool"  # TEMPLATE: tool slug
+version = "0.1.0"
+description = "TEMPLATE: one-line description. CPR Phase II, Frame X tool N."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Kostas Kazakos" }]
+keywords = ["research-methods", "uxr", "cpr", "ai-native-research"]  # TEMPLATE: add paradigm keywords
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+]
+
+# AI deps live in core (not extras): the AI layer is part of the tool,
+# even though the deterministic core runs without it.
+dependencies = [
+    "click>=8.1",
+    "litellm>=1.40",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.36"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+cpr-tool = "cpr_tool.cli:main"  # TEMPLATE: short CLI alias = "<package>.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cpr_tool*"]  # TEMPLATE: package name
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
